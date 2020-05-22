@@ -17,19 +17,19 @@
         
             <div class="input-contenedor">
                 <i class="fas fa-user icon"></i>
-                <input type="text" placeholder="Usuario" name="usuario">
+                <input type="text" placeholder="Usuario" name="usuario" maxlength="15">
             
             </div>
             
             
             <div class="input-contenedor">
                 <i class="fas fa-key icon"></i>
-                <input type="password" placeholder="Contraseña" name="password">
+                <input type="password" placeholder="Contraseña" name="password" maxlength="12">
             </div>
 
             <div class="input-contenedor">
                 <i class="fas fa-key icon"></i>
-                <input type="password" placeholder="Confirmar Contraseña" name="password2">
+                <input type="password" placeholder="Confirmar Contraseña" name="password2" maxlength="12">
                 
             </div>
             <input type="submit" value="Registrate" class="button" onclik="login">

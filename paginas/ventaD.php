@@ -30,7 +30,7 @@ include_once '../Cruds/CrudVD.php';
         <img src="../images/logo.jpg" alt="" />
       </a>
       <div class="text-center ba">
-        <h1 class="titPrin">Registro de Venta Detalle</h1>
+        <h1 class="titPrin">Registro Venta Detalle</h1>
       </div>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars-rs-food" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -69,7 +69,7 @@ include_once '../Cruds/CrudVD.php';
     <div class="form-group obtds">
       <label class="control-label tamla" for="cantidadProducto">Cantidad de productos:</label>
       <div class="col">
-        <input type="text" class="form-control text-uppercase" name="cantidadProducto" placeholder="2"
+        <input type="text" class="form-control text-uppercase" name="cantidadProducto" placeholder="2"  maxlength="3"
         value="<?php if(isset($_GET['editar'])) echo $getROW['cantidadProducto'];  ?>" />
       </div>
     </div>

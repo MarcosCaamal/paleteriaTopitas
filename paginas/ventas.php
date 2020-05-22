@@ -56,13 +56,13 @@ include_once '../Cruds/CrudV.php';
  <form method="post">    
     <div class="form-group obtds"> <label class="control-label tamla" for="fechaVenta">Fecha de Venta:</label>
       <div class="col bg-info">
-        <input type="text" class="form-control text-uppercase" name="fechaVenta" placeholder="0000-00-00" 
+        <input type="text" class="form-control text-uppercase" name="fechaVenta" placeholder="0000-00-00" maxlength="10"
         value="<?php if(isset($_GET['editar'])) echo $getROW['fechaVenta'];  ?>"/>
       </div>
     </div>
     <div class="form-group obtds"><label class="control-label tamla" for="descuento">Descuento:</label>
       <div class="col bg-info">
-        <input type="text" class="form-control text-uppercase" name="descuento" placeholder="0"
+        <input type="text" class="form-control text-uppercase" name="descuento" placeholder="0" maxlength="2"
         value="<?php if(isset($_GET['editar'])) echo $getROW['descuento'];  ?>" />
       </div>
     </div>
@@ -76,6 +76,13 @@ include_once '../Cruds/CrudV.php';
         else{
       ?>
           <div class="col-12"><button type="submit" class="btn btncamf" name="guardar">Guardar</button></div>
+          <?php if(!empty($errores)):?>
+                <div class="errror">
+                    <ul>
+                        <?php echo $errores; ?>
+                    </ul>
+          </div>
+        <?php endif;?>
       <?php
         }
       ?>	      

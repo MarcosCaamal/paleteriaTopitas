@@ -30,7 +30,7 @@
       <div class="container">
         <a class="navbar-brand" href="../index.php"><img src="../images/logo.jpg" alt="" /></a>
         <div class="text-center ba">
-          <h1 class="titPrin">Registro de Ventas</h1>
+          <h1 class="titPrin">Registro de Productos</h1>
         </div>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars-rs-food" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -54,56 +54,56 @@
        <div class="form-group obtds">
            <label class="control-label tamla" for="nombre">Nombre del Producto:</label>
           <div class="col bg-info">
-             <input type="text" class="form-control text-uppercase" id='nombre' name="nombre" placeholder="Paleta de mango"
+             <input type="text" class="form-control text-uppercase" id='nombre' name="nombre" placeholder="Paleta de mango" maxlength="30"
              value="<?php  if(isset($_GET['editar'])) echo $getROW['nombre'];?>"/>
           </div>
        </div>
        <div class="form-group obtds">
            <label class="control-label tamla" for="precioVenta">Precio de Venta:</label>
           <div class="col bg-info">
-             <input type="text" class="form-control text-uppercase" id='precioVenta' name="precioVenta" placeholder="$15"
+             <input type="text" class="form-control text-uppercase" id='precioVenta' name="precioVenta" placeholder="$15" maxlength="4"
              value="<?php  if(isset($_GET['editar'])) echo $getROW['precioVenta'];?>"/>
           </div>
        </div>
        <div class="form-group obtds">
            <label class="control-label tamla" for="costoCompra">Precio de compra:</label>
           <div class="col bg-info">
-             <input type="text" class="form-control text-uppercase" id='costoCompra' name="costoCompra" placeholder="$10"
+             <input type="text" class="form-control text-uppercase" id='costoCompra' name="costoCompra" placeholder="$10" maxlength="4"
              value="<?php  if(isset($_GET['editar'])) echo $getROW['costoCompra'];?>"/>
           </div>
        </div>
        <div class="form-group obtds">
            <label class="control-label tamla" for="stockActual">Stock Actual:</label>
           <div class="col bg-info">
-             <input type="text" class="form-control text-uppercase" id='stockActual' name="stockActual" placeholder="5"
+             <input type="text" class="form-control text-uppercase" id='stockActual' name="stockActual" placeholder="5" maxlength="4"
              value="<?php  if(isset($_GET['editar'])) echo $getROW['stockActual'];?>"/>
           </div>
        </div>
        <div class="form-group obtds">
            <label class="control-label tamla" for="stockMinimo">Stock Minimo:</label>
           <div class="col bg-info">
-             <input type="text" class="form-control text-uppercase" id='stockMinimo' name="stockMinimo" placeholder="8"
+             <input type="text" class="form-control text-uppercase" id='stockMinimo' name="stockMinimo" placeholder="8" maxlength="4"
              value="<?php  if(isset($_GET['editar'])) echo $getROW['stockMinimo'];?>"/>
           </div>
        </div>
        <div class="form-group obtds">
            <label class="control-label tamla" for="stockMaximo">Stock Maximo:</label>
           <div class="col bg-info">
-             <input type="text" class="form-control text-uppercase" id='stockMaximo' name="stockMaximo" placeholder="20"
+             <input type="text" class="form-control text-uppercase" id='stockMaximo' name="stockMaximo" placeholder="20" maxlength="4"
              value="<?php  if(isset($_GET['editar'])) echo $getROW['stockMaximo'];?>"/>
           </div>
        </div>
        <div class="form-group obtds">
            <label class="control-label tamla" for="descripcion">Descripcion:</label>
           <div class="col bg-info">
-             <input type="text" class="form-control text-uppercase" id='descripcion' name="descripcion" placeholder="Este producto es de temporada"
+             <input type="text" class="form-control text-uppercase" id='descripcion' name="descripcion" placeholder="Este producto es de temporada" maxlength="40"
              value="<?php  if(isset($_GET['editar'])) echo $getROW['descripcion'];?>"/>
           </div>
        </div>
        <div class="form-group obtds">
            <label class="control-label tamla" for="estado">Estado del producto:</label>
           <div class="col bg-info">
-             <input type="text" class="form-control text-uppercase" id='estado' name="estado" placeholder="Nuevo"
+             <input type="text" class="form-control text-uppercase" id='estado' name="estado" placeholder="Nuevo" maxlength="10"
              value="<?php  if(isset($_GET['editar'])) echo $getROW['estado'];?>"/>
           </div>
        </div>
@@ -115,6 +115,13 @@
           <div class="col-12">
              <button type="submit" class="btn btncamf" name="actualizar">Actualizar</button>
             </div>
+            <?php if(!empty($errores)):?>
+                <div class="errror">
+                    <ul>
+                        <?php echo $errores; ?>
+                    </ul>
+          </div>
+        <?php endif;?>
          <?php
         }
         else
@@ -123,6 +130,13 @@
          <div class="col-12">
            <button type="submit" class="btn btncamf" name="guardar">Guardar</button>
          </div>
+         <?php if(!empty($errores)):?>
+                <div class="errror">
+                    <ul>
+                        <?php echo $errores; ?>
+                    </ul>
+          </div>
+        <?php endif;?>
          <?php
         }
         ?>

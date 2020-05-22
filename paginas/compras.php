@@ -28,7 +28,7 @@ include_once '../Cruds/crudC.php';
       <div class="container">
         <a class="navbar-brand" href="../index.php"><img src="../images/logo.jpg" alt="" /></a>
         <div class="text-center ba">
-          <h1 class="titPrin">Registro de Ventas</h1>
+          <h1 class="titPrin">Registro de Compras</h1>
         </div>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars-rs-food" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -52,7 +52,7 @@ include_once '../Cruds/crudC.php';
     <div class="form-group obtds">
       <label class="control-label tamla" for="fechaCompra">Fecha de Compra:</label>
       <div class="col bg-info">
-        <input type="text" class="form-control text-uppercase" name="fechaCompra" placeholder="0000-00-00"
+        <input type="text" class="form-control text-uppercase" name="fechaCompra" placeholder="0000-00-00" maxlength="10"
         value="<?php if(isset($_GET['editar'])) echo $getROW['fechaCompra'];  ?>" />
       </div>
     </div>
@@ -63,6 +63,13 @@ include_once '../Cruds/crudC.php';
         <div class="col-12">
           <button type="submit" class="btn btncamf" name="actualizar">Actualizar</button>
         </div>
+        <?php if(!empty($errores)):?>
+                <div class="errror">
+                    <ul>
+                        <?php echo $errores; ?>
+                    </ul>
+          </div>
+        <?php endif;?>
       <?php
       }
       else
@@ -71,6 +78,13 @@ include_once '../Cruds/crudC.php';
         <div class="col-12">
           <button type="submit" class="btn btncamf" name="guardar">Guardar</button>
         </div>
+        <?php if(!empty($errores)):?>
+                <div class="errror">
+                    <ul>
+                        <?php echo $errores; ?>
+                    </ul>
+          </div>
+        <?php endif;?>
       <?php
       }
       ?>

@@ -30,7 +30,7 @@ include_once '../Cruds/CrudCD.php';
         <img src="../images/logo.jpg" alt="" />
       </a>
       <div class="text-center ba">
-        <h1 class="titPrin">Registro de Compra Detalle</h1>
+        <h1 class="titPrin">Registro Compra Detalle</h1>
       </div>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars-rs-food" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -52,7 +52,7 @@ include_once '../Cruds/CrudCD.php';
 <div class="container-fluid ">
  <form method="post">
     <div class="form-group">
-      <label class="control-label tamla">Selecciona el producto:</label>
+      <label class="control-label tamla">Producto:</label>
       <select name="idProducto">
         <option value="0" selected disabled="disabled">Elige una opcion</option>
         <?php $res = $MySQLiconn->query("SELECT * FROM producto");      
@@ -69,7 +69,7 @@ include_once '../Cruds/CrudCD.php';
     <div class="form-group obtds">
       <label class="control-label tamla" for="cantidadProducto">Cantidad de productos:</label>
       <div class="col">
-        <input type="text" class="form-control text-uppercase" name="cantidadProducto" placeholder="2"
+        <input type="text" class="form-control text-uppercase" name="cantidadProducto" placeholder="2" maxlength="3"
         value="<?php if(isset($_GET['editar'])) echo $getROW['cantidadProducto'];  ?>" />
       </div>
     </div>
@@ -79,12 +79,26 @@ include_once '../Cruds/CrudCD.php';
       {
       ?>
         <div class="col-12"><button type="submit" class="btn btncamf" name="actualizar">Actualizar</button></div>
+        <?php if(!empty($errores)):?>
+                <div class="errror">
+                    <ul>
+                        <?php echo $errores; ?>
+                    </ul>
+          </div>
+        <?php endif;?>
       <?php
       }
       else
       {
       ?>
         <div class="col-12"><button type="submit" class="btn btncamf" name="guardar">Guardar</button></div>
+        <?php if(!empty($errores)):?>
+                <div class="errror">
+                    <ul>
+                        <?php echo $errores; ?>
+                    </ul>
+          </div>
+        <?php endif;?>
       <?php
       }
       ?>	      

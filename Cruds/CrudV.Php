@@ -1,11 +1,11 @@
 <?php
 include_once '../Cruds/Db.php';
+
 $rs ="SELECT max(idVentas) as id from ventas"; $SQL=$MySQLiconn->query($rs);
 if ($row = $SQL->fetch_array()) { $Ventas_idVentas = trim($row[0]); }
 /* Codigo para Insertar Datos */
 if(isset($_POST['guardar']))
 {
-  echo "Guardandoooooooooooooooooooo";
   $fechaVenta = $MySQLiconn->real_escape_string($_POST['fechaVenta']);
   $descuento = $MySQLiconn->real_escape_string($_POST['descuento']);
   $SQL = $MySQLiconn->query("INSERT INTO ventas(totalProductoVendido, fechaVenta, importeTotal,descuento) VALUES ('0', '$fechaVenta', '0','$descuento')");

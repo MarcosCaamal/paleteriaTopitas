@@ -71,25 +71,25 @@
 			<label for="telefono" class="nombreDatos">Nombres: </label>
 			<div class="input-contenedor">
 				<i class="fas fa-user icon"></i>
-				<input type="text" placeholder="Nombre" name="nombre" value="<?php echo $resultado['nombre']?>">
+				<input type="text" placeholder="Nombre" name="nombre" maxlength="25" value="<?php echo $resultado['nombre']?>">
 			</div>
 
 			<label for="telefono" class="nombreDatos">Apellidos: </label>
 			<div class="input-contenedor">
 				<i class="fas fa-user icon"></i>
-				<input type="text" placeholder="Apellidos" name="apellidos" value="<?php echo $resultado['apellidos']?>">
+				<input type="text" placeholder="Apellidos" name="apellidos" maxlength="30" value="<?php echo $resultado['apellidos']?>">
 			</div>
 
 			<label for="telefono" class="nombreDatos">Email: </label>
 			<div class="input-contenedor">
 				<i class="fas fa-envelope icon"></i>
-				<input type="text" placeholder="something@example.com" name="email" value="<?php echo $resultado['email']?>">
+				<input type="text" placeholder="something@example.com" name="email" maxlength="35" value="<?php echo $resultado['email']?>">
 			</div>
 
 			<label for="telefono" class="nombreDatos">Telefono: </label>
 			<div class="input-contenedor">
 				<i class="fas fa-phone icon"></i>
-				<input type="text" placeholder="Teléfono" name="telefono" value="<?php echo $resultado['telefono']?>">
+				<input type="text" placeholder="Teléfono" name="telefono"  maxlength="10" value="<?php echo $resultado['telefono']?>">
 			</div>
 
 			<input type="submit" value="Actualizar Datos" class="button" onclick="actualizarperfil">

@@ -3,7 +3,6 @@ include_once 'Db.php';
 /* Codigo para Insertar Datos */
 if(isset($_POST['guardar']))
 {
-  echo "Guardandoooooooooooooooooooo";
   $Producto_idProducto = $MySQLiconn->real_escape_string($_POST['idProducto']);
   $cantidadProducto = $MySQLiconn->real_escape_string($_POST['cantidadProducto']);
   $costoP= "SELECT producto.costoCompra FROM producto WHERE producto.idProducto ='$Producto_idProducto'"; $SQL = $MySQLiconn->query($costoP);
