@@ -28,7 +28,10 @@ if(isset($_GET['eliminar']))
 /* Codigo para Editar Datos */
 if(isset($_GET['editar']))
 {
- $SQL = $MySQLiconn->query("SELECT * FROM detalleventa WHERE Producto_idProducto=".$_GET['editar']);
+  $rs ="SELECT max(idVentas) as id from ventas"; $SQL=$MySQLiconn->query($rs);
+  if ($row = $SQL->fetch_array()) { $Ventas_idVentas = trim($row[0]); }
+ $SQL = $MySQLiconn->query("SELECT * FROM detalleventa WHERE 
+ Ventas_idVentas = '$Ventas_idVentas' AND Producto_idProducto=".$_GET['editar']);
  $getROW = $SQL->fetch_array();
 }
 
@@ -42,7 +45,9 @@ if(isset($_POST['actualizar']))
   if ($row = $SQL->fetch_array()) { $Ventas_idVentas = trim($row[0]); }
   $subtotal = $_POST['cantidadProducto'] * $pv; 
 
-  $SQL = $MySQLiconn->query("UPDATE detalleventa SET Producto_idProducto='".$_POST['idProducto']."', Ventas_idVentas='".$Ventas_idVentas."', cantidadProducto='".$_POST['cantidadProducto']."', subtotal='".$subtotal."' WHERE Producto_idProducto=".$_GET['editar']);
+  $SQL = $MySQLiconn->query("UPDATE detalleventa SET Producto_idProducto='".$_POST['idProducto']."', 
+  Ventas_idVentas='".$Ventas_idVentas."', cantidadProducto='".$_POST['cantidadProducto']."', 
+  subtotal='".$subtotal."' WHERE Producto_idProducto=".$_GET['editar']);
   header("Location:../paginas/ventas.php");
 }
 ?>

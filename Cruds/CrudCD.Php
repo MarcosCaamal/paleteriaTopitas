@@ -29,7 +29,10 @@ if(isset($_GET['eliminar']))
 /* Codigo para Editar Datos */
 if(isset($_GET['editar']))
 {
- $SQL = $MySQLiconn->query("SELECT * FROM detallecompra WHERE Producto_idProducto=".$_GET['editar']);
+  $rs ="SELECT max(idcompras) as id from compras"; $SQL=$MySQLiconn->query($rs);
+  if ($row = $SQL->fetch_array()) { $compras_idcompras = trim($row[0]); }
+ $SQL = $MySQLiconn->query("SELECT * FROM detallecompra WHERE compras_idcompras = '$compras_idcompras' 
+ AND Producto_idProducto=".$_GET['editar']);
  $getROW = $SQL->fetch_array();
 }
 

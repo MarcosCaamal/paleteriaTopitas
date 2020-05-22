@@ -81,46 +81,19 @@ include_once '../Cruds/crudC.php';
   </form>
 <?php
 include_once '../Cruds/Db.php';
-if(isset($_POST['precioCostoProducto']) or isset($_POST['cantidad']))
-    {
-        $precioCostoProducto = $_POST['precioCostoProducto'];
-        $cantidad = $_POST['cantidad'];
-        if ($precioCostoProducto<>""){
-            $precioCostoProducto= "'%" . $precioCostoProducto. "%'";
-            $filtro= "SELECT idcompras,precioCostoProducto, fechaCompra, cantidad FROM compras where precioCostoProducto like " . $precioCostoProducto. "order by precioCostoProducto";
-        }elseif($cantidad<>""){
-            $cantidad= "'%" . $cantidad. "%'";
-            $filtro= "SELECT idcompras,precioCostoProducto, fechaCompra, cantidad FROM compras where cantidad like " . $cantidad. "order by cantidad";
-         }else{
-            $filtro="SELECT idcompras,precioCostoProducto, fechaCompra, cantidad FROM compras order by precioCostoProducto";
-        }
-    }else{
-      //$filtro="SELECT idcompras,precioCostoProducto, fechaCompra, cantidad FROM compras order by precioCostoProducto";
-      $rs ="SELECT max(idcompras) as id from compras"; $SQL=$MySQLiconn->query($rs);
-      if ($row = $SQL->fetch_array()) { $id = trim($row[0]); }
-      $filtro="SELECT compras.idcompras,
-      detallecompra.Producto_idProducto,detallecompra.compras_idcompras,detallecompra.cantidadProducto,detallecompra.subtotal,
-      producto.idProducto,producto.nombre,producto.costoCompra,producto.descripcion
-      FROM compras, detallecompra, producto
-      WHERE idcompras ='$id' 
-      AND detallecompra.compras_idcompras = '$id'
-      AND detallecompra.Producto_idProducto = producto.idProducto";
-
-    }
-    $SQL = $MySQLiconn->query($filtro);
+//$filtro="SELECT idcompras,precioCostoProducto, fechaCompra, cantidad FROM compras order by precioCostoProducto";
+  $rs ="SELECT max(idcompras) as id from compras"; $SQL=$MySQLiconn->query($rs);
+  if ($row = $SQL->fetch_array()) { $id = trim($row[0]); }
+  $filtro="SELECT compras.idcompras,
+  detallecompra.Producto_idProducto,detallecompra.compras_idcompras,detallecompra.cantidadProducto,detallecompra.subtotal,
+  producto.idProducto,producto.nombre,producto.costoCompra,producto.descripcion
+  FROM compras, detallecompra, producto
+  WHERE idcompras ='$id' 
+  AND detallecompra.compras_idcompras = '$id'
+  AND detallecompra.Producto_idProducto = producto.idProducto";
+  $SQL = $MySQLiconn->query($filtro);
 ?>
  <h3 class="textoTa text-center">Listado de Compras</h3>
- <div class="control-label tamla">
-    Buscar por:
-    <form method='post' action ='<?php echo $_SERVER["PHP_SELF"];?>'>
-         Costo Producto:
-        <input type='text' name ='precioCostoProducto'>
-         Cantidad:
-        <input type='text' name ='cantidad'>
-	     <input type='submit' class="btn btncamf">
-    </form>
-</div>
-<BR></BR>
  <table class="table table-hover table-bordered shadow p-3 mb-5 bg-white rounded">
    <tr class="tabTit">
        <th>Nombre del producto</th>
