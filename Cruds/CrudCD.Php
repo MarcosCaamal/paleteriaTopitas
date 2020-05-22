@@ -46,7 +46,8 @@ if(isset($_POST['actualizar']))
   if ($row = $SQL->fetch_array()) { $compras_idcompras = trim($row[0]); }
   $subtotal = $_POST['cantidadProducto'] * $co; 
 
-  $SQL = $MySQLiconn->query("UPDATE detallecompra SET Producto_idProducto='".$_POST['idProducto']."', compras_idcompras='".$compras_idcompras."', cantidadProducto='".$_POST['cantidadProducto']."', subtotal='".$subtotal."' WHERE Producto_idProducto=".$_GET['editar']);
+  $SQL = $MySQLiconn->query("UPDATE detallecompra SET Producto_idProducto='".$_POST['idProducto']."', compras_idcompras='".$compras_idcompras."', cantidadProducto='".$_POST['cantidadProducto']."', subtotal='".$subtotal."' 
+  WHERE compras_idcompras = '$compras_idcompras' AND Producto_idProducto=".$_GET['editar']);
   header("Location:compras.php");
 }
 ?>

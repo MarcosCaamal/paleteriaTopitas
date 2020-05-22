@@ -47,7 +47,7 @@ if(isset($_POST['actualizar']))
 
   $SQL = $MySQLiconn->query("UPDATE detalleventa SET Producto_idProducto='".$_POST['idProducto']."', 
   Ventas_idVentas='".$Ventas_idVentas."', cantidadProducto='".$_POST['cantidadProducto']."', 
-  subtotal='".$subtotal."' WHERE Producto_idProducto=".$_GET['editar']);
+  subtotal='".$subtotal."' WHERE Ventas_idVentas = '$Ventas_idVentas' AND Producto_idProducto=".$_GET['editar']);
   header("Location:../paginas/ventas.php");
 }
 ?>
