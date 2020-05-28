@@ -40,7 +40,7 @@ include_once '../Cruds/CrudVDEm.php';
           <li class="nav-item"><a class="nav-link" href="../index.php">Inicio</a></li>
           <li class="nav-item"><a class="nav-link" href="productoEm.php">Productos</a></li>
           <li class="nav-item active"><a class="nav-link" href="ventasEm.php">Ventas</a></li>
-          <li class="nav-item"><a class="nav-link" href="../actualizarperfil.php">Actualizar Perfil</a></li>
+          <li class="nav-item"><a class="nav-link" href="../actualizarusuario.php">Actualizar Perfil</a></li>
           <li class="nav-item"><a class="nav-link" href="../Cerrar.php">Cerrar Sesión</a></li>
         </ul>
       </div>
