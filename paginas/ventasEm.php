@@ -5,7 +5,7 @@
 ?>
   
 <?php
-include_once '../Cruds/CrudV.php';
+include_once '../Cruds/CrudVEm.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -41,9 +41,8 @@ include_once '../Cruds/CrudV.php';
         <div class="collapse navbar-collapse" id="navbars-rs-food">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item"><a class="nav-link" href="../index.php">Inicio</a></li>
-            <li class="nav-item"><a class="nav-link" href="producto.php">Productos</a></li>
-            <li class="nav-item"><a class="nav-link" href="compras.php">Compras</a></li>
-            <li class="nav-item active"><a class="nav-link" href="ventas.php">Ventas</a></li>
+            <li class="nav-item"><a class="nav-link" href="productoEm.php">Productos</a></li>
+            <li class="nav-item active"><a class="nav-link" href="ventasEm.php">Ventas</a></li>
             <li class="nav-item"><a class="nav-link" href="../actualizarperfil.php">Actualizar Perfil</a></li>
           <li class="nav-item"><a class="nav-link" href="../Cerrar.php">Cerrar Sesión</a></li>
           </ul>
@@ -88,7 +87,7 @@ include_once '../Cruds/CrudV.php';
       ?>	      
     </div>
     <div class="form-group">
-      <div class="col-12"><li class="active estMe btns"><a href="ventaD.php">AGREGAR O ELIMINAR PRODUCTOS</a></li></div>
+      <div class="col-12"><li class="active estMe btns"><a href="ventaDEm.php">AGREGAR O ELIMINAR PRODUCTOS</a></li></div>
     </div>
  </form>
  <?php

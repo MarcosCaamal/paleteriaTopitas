@@ -39,7 +39,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 
     // Comprobamos si hay errores, sino entonces agregamos el usuario y redirigimos.
 	if ($errores == '') {
-		$statement = $conexion->prepare('INSERT INTO usuarios (idUsuario, usuario, password, idrol) VALUES (null, :usuario, :pass, 1)');
+		$statement = $conexion->prepare('INSERT INTO usuarios (idUsuario, usuario, password, idrol) VALUES (null, :usuario, :pass, 2)');
 		$statement->execute(array(
 				':usuario' => $usuario,
 				':pass' => $password

@@ -4,10 +4,9 @@
 	<meta charset="UTF-8">
 	<title></title> 
 	<meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=3.0, minimum-scale=1.0">
- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" >
+ 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" >
 	<link rel="stylesheet" href="css/estilos.css">
 </head>
-
 
 <body>
 	
@@ -36,7 +35,7 @@
                     </ul>
                 </div>
 		<?php endif;?>
-		<p>¿No tienes una cuenta? <a class="link" href="registrate.php">Registrate </a></p>
+		<p>¿No tienes una cuenta? <a class="link" href="registrate.php">Regístrate </a></p>
 	</form>
 </body>
 </html>

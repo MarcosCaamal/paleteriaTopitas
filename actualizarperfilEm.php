@@ -44,7 +44,7 @@ require 'funciones.php';
                     ':telefono' => $telefono,
                     ':idusuario' => $idusuario
                 ));
-               header('Location: actualizarusuario.php');
+               header('Location: actualizarperfilEm.php');
             }
 
 
@@ -68,7 +68,7 @@ require 'funciones.php';
 
         }
 
-    require 'views/actualizarusuario.view.php';
+    require 'views/actualizarperfilEm.view.php';
 
     }else{
     header ('Location: login.php');

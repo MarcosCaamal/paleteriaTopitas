@@ -31,13 +31,12 @@
 				</button>
 				<div class="collapse navbar-collapse" id="navbars-rs-food">
 					<ul class="navbar-nav ml-auto">
-            <li class="nav-item active"><a class="nav-link" href="index.php">Inicio</a></li>
-
-					<li class="nav-item"><a class="nav-link" href="paginas/producto.php">Productos</a></li>
-					<li class="nav-item"><a class="nav-link" href="paginas/compras.php">Compras</a></li>
-					<li class="nav-item"><a class="nav-link" href="paginas/ventas.php">Ventas</a></li>
-          <li class="nav-item"><a class="nav-link" href="actualizarperfil.php">Actualizar Perfil</a></li>
-          <li class="nav-item"><a class="nav-link" href="Cerrar.php">Cerrar Sesión</a></li>
+						<li class="nav-item active"><a class="nav-link" href="index.php">Inicio</a></li>
+						<li class="nav-item"><a class="nav-link" href="paginas/producto.php">Productos</a></li>
+						<li class="nav-item"><a class="nav-link" href="paginas/compras.php">Compras</a></li>
+						<li class="nav-item"><a class="nav-link" href="paginas/ventas.php">Ventas</a></li>
+						<li class="nav-item"><a class="nav-link" href="actualizarperfil.php">Actualizar Perfil</a></li>
+						<li class="nav-item"><a class="nav-link" href="Cerrar.php">Cerrar Sesión</a></li>
 					</ul>
 				</div>
 			</div>
@@ -53,7 +52,7 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-md-12">
-													</div>
+						</div>
 					</div>
 				</div>
 			</li>
@@ -93,17 +92,15 @@
 	</div>
 
 	<!-- Start Footer -->
-
-
-		<div class="copyright">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-12">
-						<p class="company-name">TODOS LOS DERECHOS RESERVADOS. &copy;MAYO 2020 <a href="#">Paleteria Las Topitas</a>
-					</div>
+	<div class="copyright">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<p class="company-name">TODOS LOS DERECHOS RESERVADOS. &copy;MAYO 2020 <a href="#">Paleteria Las Topitas</a>
 				</div>
 			</div>
 		</div>
+	</div>
 
 	<!-- ALL JS FILES -->
 	<script src="js/jquery-3.2.1.min.js"></script>
